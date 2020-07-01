@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Wed Jul 01 2020 20:52:34 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jul 01 2020 21:00:05 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 01 2020 21:08:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "https://linan116.github.io/2020/07/mixpanel.html",
     "headline": "mixpanel系统架构",
     "datePublished": "Wed Jul 01 2020 20:52:34 GMT+0800",
-    "dateModified": "Wed Jul 01 2020 21:00:05 GMT+0800",
+    "dateModified": "Wed Jul 01 2020 21:08:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "linan116",
@@ -734,7 +734,7 @@ var _hmt = _hmt || [];
 <p><strong>审计</strong>：对于访问客户数据和生产系统的个人，有着严格的限制，必须有书面的许可。同时，所有的数据访问行为都会被定期审核，以防数据被滥用。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Mixpanel提供了一个快速、可扩展、可靠以及安全的产品分析平台。接下来的图表总结了Mixpanel的架构设计是如何提供速度、扩展性、可靠性和安全性的。</p>
 <p>Mixpanel产品分析平台的架构服务超过20000家客户，包括BMW、DocuSign、US Bank和Microsoft。我们了解到他们利用我们的产品帮忙他们回答了绝大多数用户与产品的问题，所以我们对于我们系统的性能、可靠性和安全性非常重视。我们有将近三分之一的工程师负责创建这篇文章中提及的采集、存储和查询系统。同时，我们每天都在从功能和性能上对其进行优化。</p>
-<pre><code>| Ingestion  |  Storage    |  Query    | </code></pre><p>———– | ——- | ——–  | —— | —– | ——— |<br>速度 Speed       | 对不同数据量的客户使用不同的消息队列 | 自定义分布式列式存储，基于Google Cloud Platform扩展    | 分布式处理，仅读取需要的列，本地数据缓存，根据切片的复制进行任务划分 |<br>扩展性 Scale       | 很多http服务器和消息队列。可根据需求水平扩展，增加新的服务器 | 许多的数据分片    | 数据分片的本地处理 |<br>可靠性 Reliability | 全球分布式采集中心。远程复制进行容灾处理| 每个数据分片至少有2份复制 | 查询过程能够使用任意切片的复制 |<br>安全性 Security    | 使用TLS 1.2，256bit AES加密   | 256bit数据加密 | 使用LTS 1.2，256bit AES加密 |</p>
+<pre><code>| Ingestion  |  Storage    |  Query    |           </code></pre><p>———– | ——- | ——–  | —— |<br>速度 Speed       | 对不同数据量的客户使用不同的消息队列 | 自定义分布式列式存储，基于Google Cloud Platform扩展    | 分布式处理，仅读取需要的列，本地数据缓存，根据切片的复制进行任务划分 |<br>扩展性 Scale       | 很多http服务器和消息队列。可根据需求水平扩展，增加新的服务器 | 许多的数据分片    | 数据分片的本地处理 |<br>可靠性 Reliability | 全球分布式采集中心。远程复制进行容灾处理| 每个数据分片至少有2份复制 | 查询过程能够使用任意切片的复制 |<br>安全性 Security    | 使用TLS 1.2，256bit AES加密   | 256bit数据加密 | 使用LTS 1.2，256bit AES加密 |</p>
 <p>原文链接：<a href="https://mixpanel.com/wp-content/uploads/2018/06/System-architecture_June2018.pdf" target="_blank" rel="noopener">https://mixpanel.com/wp-content/uploads/2018/06/System-architecture_June2018.pdf</a></p>
 
         
