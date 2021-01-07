@@ -1,1 +1,1 @@
-https://linan116.github.io/2020/07/mixpanel.html
+https://linan116.vercel.app/2020/07/mixpanel.html
